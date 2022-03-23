@@ -26,24 +26,6 @@ K_G = Client(
 	api_hash=API_HASH
 	)
 
-# Start Buttonu İcin Def Oluşturalım :)
-def button():
-	BUTTON=[[InlineKeyboardButton(text="👨🏻‍💻 Sahibim ",url="t.me/YoungSoftware")]]
-	BUTTON+=[[InlineKeyboardButton(text="🌱 Open Source 🌱",url="https://github.com/AkinYoungSoftware/TgEglenceBot")]]
-	return InlineKeyboardMarkup(BUTTON)
-
-# Kullanıcı Start Komutunu Kullanınca Selam'layalım :)
-@K_G.on_message(filters.command("start"))
-async def _(client, message):
-	user = message.from_user # Kullanıcın Kimliğini Alalım
-
-	await message.reply_text(text="**Merhaba {}!**\n\n__Ben Pyrogram Api İle Yazılmış Eğlence Botuyum :)__\n\n**Repom =>** [Open Source](https://github.com/AkinYoungSoftware/TgEglenceBot)\nDoğruluk mu? Cesaret mi? Oyun Komutu => /dc".format(
-		user.mention, # Kullanıcı'nın Adı
-		),
-	disable_web_page_preview=True, # Etiketin Önizlemesi Olmaması İcin Kullanıyoruz
-	reply_markup=button() # Buttonlarımızı Ekleyelim
-	)
-
 # Dc Komutu İcin Olan Buttonlar
 def d_or_c(user_id):
 	BUTTON = [[InlineKeyboardButton(text="✅ Doğruluk", callback_data = " ".join(["d_data",str(user_id)]))]]
