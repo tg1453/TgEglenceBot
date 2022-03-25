@@ -139,4 +139,4 @@ async def _(client, message):
       return
 ############################
 
-K_G.run() # Botumuzu Calıştıralım :)
+K_G.start() # Botumuzu Calıştıralım :)
